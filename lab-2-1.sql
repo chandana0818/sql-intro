@@ -16,3 +16,4 @@
 -- +------+------------------------+------+
 
 
+select year,name, wins from teams where wins>100 order by wins;

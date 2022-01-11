@@ -25,3 +25,14 @@
 -- | Ian        | Happ      |
 
 
+select id from teams where name = "Chicago Cubs" and year = "2020" limit 10;
+
+select * from stats where team_id IN (select id from teams where name = "Chicago Cubs" and year = "2020") limit 10;
+
+select distinct(player_id) from stats where team_id IN (select id from teams where name = "Chicago Cubs" and year = "2020") limit 10;
+
+select * from players where id IN (select distinct(player_id) from stats where team_id IN 
+(select id from teams where name = "Chicago Cubs" and year = "2020")) limit 10;
+
+select first_name,last_name from players where id IN (select distinct(player_id) from stats where team_id IN 
+(select id from teams where name = "Chicago Cubs" and year = "2020"));
