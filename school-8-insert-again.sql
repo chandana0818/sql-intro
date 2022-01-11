@@ -1,0 +1,1 @@
+insert into students values (2, "Nandish", "Tella");
